@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+  </head>
+  <link href="{% static 'authtest/css/home.css' %}" rel="stylesheet">
+  <body>
+    {% if user.is_authenticated %} <!--ログインしている場合-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+    <h1>教科一覧</h1> 
+      {% csrf_token %}
+      <div>
+        <label for="titleInput">教科名↓</label>
+        <input id="titleInput" name="file" type="text" placeholder="教科名を入力">
+      </div>
+      <div>
+        <button type="submit">作成</button>
+      </div>
+    </form>
+    <br>
+    {% if contents %}
+    {% for content in contents %}
+    <button><a href="{% url 'detail' content.id %}">{{ content.title }}</a></button>
+    <div>
+      {{ content.body | linebreaksbr}}
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>一つも教科が登録されていません</p>
+    <a href="{% url 'logout' %}">ログアウト</a>
+    {% endif %}
+    </div>
+
+    {% else %} <!--ログインしていない場合-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+    <p><a href="{% url 'login' %}">はじめる</a></p>
+    </div>
+    {% endif %}
+  </body>
+</html>

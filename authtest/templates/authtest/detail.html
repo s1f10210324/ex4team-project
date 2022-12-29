@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8"></head>
+    <link href="{% static 'authtest/css/folder.css' %}" rel="stylesheet">
+  <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+    <h1>{{ folder.title }}</h1>
+    <hr>
+    <p>
+      <button><a href="{% url 'home' %}">戻る</a></button>
+      <button><a href="{% url 'update' folder.id %}">変更する</a></button>
+      <button><a href="{% url 'delete' folder.id %}">削除する</a></button>
+      <button><a href="{% url 'paper' %}">単語を作成する</a></button>
+    </p>
+    </div>
+  </body>
+</html>

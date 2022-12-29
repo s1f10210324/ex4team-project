@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Card</title>
+    <meta charset="UTF-8">
+    <link href="{% static 'authtest/css/paper_detail.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+    <div class="card">
+      <p>{{ card.problem }}</p>
+      <div class="hidden_box">
+        <label class="label-1" for="hidden">解答はこちら</label>
+        <input type="checkbox" id="hidden">
+        <div class="hidden_show">
+          <p>{{ card.answer }}</p>
+        </div>
+      </div>
+      <div>
+        <a href="{% url 'paper_delete' card.id %}">削除</a>
+      </div>
+      <a href="{% url 'paper' %}">一覧に戻る</a><br>
+    </div>
+    </div>
+  </body>
+</html>
