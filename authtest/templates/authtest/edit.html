@@ -1,27 +1,20 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
+<html lang="ja">
+  <head>    
     <meta charset="UTF-8"></head>
-    <link href="{% static 'authtest/css/edit.css' %}" rel="stylesheet">
+    <title></title>
   <body>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <div class="content">
-    <h1 >科目名を変更する</h1>
-    <form action="{% url 'update' contents.id %}" method="post">
+    <h1 >教科名を編集</h1>
+    <form action="{% url 'update' subject.id %}" method="post">
       {% csrf_token %}
       <div>
-        <label for="titleInput">科目名を入力</label>
-        <input id="titleInput" name="file" type="text"
-          placeholder="Input title" value="{{ contents.title }}">
+        <label for="titleInput">教科名</label>
+        <input id="titleInput" name="title" type="text"
+          placeholder="教科名を入力してください" value="{{ subject.title }}">
       </div>
       <div>
-        <button type="submit">更新</button>
+        <button type="submit">変更</button>
       </div>
     </form>
-    </div>
   </body>
 </html>

@@ -1,1 +1,66 @@
 4-09 スライド4-4 ユーザ認証機能
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+</body>
+</html>
+
+<img src="リンク" alt="日本語の説明">
+
+
+<link rel="stylesheet" type="text/css" href="cssファイルのURL">
+
+200~299 成功 
+300~399 リダイレクト
+
+
+{{変数名}} {{変数名.属性}}
+{{変数名 | フィルタ名}} lower, linebreaker...
+
+{%for 変数名 in リスト %}
+処理
+{% endfor %}
+
+{%if 変数 %}
+処理
+{% else %}
+処理
+{% endif %}
+
+<form action="{% url '' %}" method="post">
+
+https://moocs.iniad.org/courses/2022/IE101/10-1/10-1-1
+HttpRequest GET:辞書型でクエリーパラメータを取得
+            POST:POSTメソッドで受け渡されたパラメータを辞書型で取得
+↓
+ex)
+if request.method == 'GET':
+    return HttpResponse()
+else if request.method == 'POST':
+    return HttpResponse()
+
+if request.method == 'GET':
+    return render(request, 'url')
+elif request.method == 'POST':
+    context =
+    return render(request, 'url', context)
+
+redirect(name)
+
+一連の流れ
+オブジェクト = クラス名.objects.get(pk=ID)
+オブジェクト.オブジェクト変数 = 値
+オブジェクト.save()
+
+オブジェクト = クラス名.objects.get(pk=ID)
+オブジェクト.delete()
+
+クラスについての詳細
+https://moocs.iniad.org/courses/2022/IE101/10-2/10-2-3
+
+Classを作成したら「python manage.py makemigrations」でDBを更新すること。
