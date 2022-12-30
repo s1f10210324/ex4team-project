@@ -11,14 +11,14 @@
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input type="submit" value="Login" />
+      <input type = "submit" value = "Login" />
     </form>
 
-    <a href="{% url 'new' %}">アカウント新規作成</a>
+    <a href = "{% url 'new' %}">アカウント新規作成</a>
 
     <br>
 
-    <a href="{% url 'home' %}">ホームに戻る</a>
+    <a href = "{% url 'home' %}">ホームに戻る</a>
     </div>
   </body>
 </html>

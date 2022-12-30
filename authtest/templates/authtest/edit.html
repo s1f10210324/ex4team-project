@@ -5,15 +5,15 @@
     <title></title>
   <body>
     <h1 >教科名を編集</h1>
-    <form action="{% url 'update' subject.id %}" method="post">
+    <form action = "{% url 'update' subject.id %}" method = "post">
       {% csrf_token %}
       <div>
-        <label for="titleInput">教科名</label>
-        <input id="titleInput" name="title" type="text"
-          placeholder="教科名を入力してください" value="{{ subject.title }}">
+        <label for = "titleInput">教科名</label>
+        <input id = "titleInput" name = "title" type = "text"
+          placeholder = "教科名を入力してください" value = "{{ subject.title }}">
       </div>
       <div>
-        <button type="submit">変更</button>
+        <button type = "submit">変更</button>
       </div>
     </form>
   </body>

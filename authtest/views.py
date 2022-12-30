@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from authtest.models import Subject
 from django.http import Http404
+from authtest.models import Quiz
 
 # Create your views here.
 
@@ -48,3 +49,6 @@ def delete(request, subject_id):
         raise Http404("Subject does not exist")
     subject.delete()
     return redirect(home)
+
+def quiz(request, subject_id):
+    return render(request, 'authtest/quiz.html')

@@ -8,9 +8,10 @@
     <h2>{{ subject.title }}</h2>
     <hr>
     <p>
-      <a href="{% url 'home' %}">戻る</a>
-      <a href="{% url 'update' subject.id %}">変更</a>
-      <a href="{% url 'delete' subject.id %}">削除</a>
+      <a href = "{% url 'home' %}">戻る</a>
+      <a href = "{% url 'update' subject.id %}">変更</a>
+      <a href = "{% url 'delete' subject.id %}">削除</a>
+      <a href = "{% url 'quiz' subject.id %}">作成</a>
     </p>
   </body>
 </html>
