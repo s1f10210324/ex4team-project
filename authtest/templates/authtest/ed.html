@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>    
+    <meta charset="UTF-8"></head>
+    <title></title>
+  <body>
+    <h1 >問題を編集</h1>
+    <form action = "{% url 'ud' subject.id quiz.id %}" method = "post">
+      {% csrf_token %}
+      <div>
+        <label for = "titleInput">教科名</label>
+        <input id = "valueInput" name = "value" type = "text" placeholder = "教科名を入力してください">
+
+        <label for = "titleInput">問題</label>
+        <input id = "questionInput" name = "question" type = "text" placeholder = "問題を入力してください">
+
+        <label for = "titleInput">解答</label>
+        <input id = "answerInput" name = "answer" type = "text" placeholder = "解答を入力してください">
+      </div>
+      <div>
+        <button type = "submit">変更</button>
+      </div>
+    </form>
+  </body>
+</html>

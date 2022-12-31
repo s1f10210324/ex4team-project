@@ -64,3 +64,22 @@ redirect(name)
 https://moocs.iniad.org/courses/2022/IE101/10-2/10-2-3
 
 Classを作成したら「python manage.py makemigrations」でDBを更新すること。
+
+<form action = "{% url 'quiz' subject_id %}" method = "post">
+      {% csrf_token %}
+      <div>
+      <label for = "titleInput">教科名</label>
+      <input id = "titleInput" name = "title" type = "text" placeholder = "教科名を入力してください">
+      </div>
+      <div>
+        <label for = "titleInput">問題</label>
+        <input id = "questionInput" name = "question" type = "text" placeholder = "問題を入力してください">
+      </div>
+      <div>
+        <label for = "titleInput">回答</label>
+        <input id = "answerInput" name = "answer" type = "text" placeholder = "答えを入力してください">
+      </div>
+      <div>
+      <button type = "submit">作成する</button>
+      </div>
+    </form>

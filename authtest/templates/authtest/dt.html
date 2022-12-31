@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>問題詳細</title>
+    <meta charset="UTF-8"></head>
+  <body>
+    <p>教科名: {{ quiz.value }}</p>
+    <p>問題: {{ quiz.question }}</p>
+    <p>答え: {{ quiz.answer }}</p>
+    <hr>
+    <p>
+      <a href = "{% url 'quiz' subject.id %}">戻る</a>
+      <a href = "{% url 'ud' subject.id quiz.id %}">変更</a>
+      <a href = "{% url 'dl' subject.id quiz.id %}">削除</a>
+    </p>
+  </body>
+</html>

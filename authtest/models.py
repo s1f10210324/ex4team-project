@@ -8,5 +8,9 @@ class Subject(models.Model):
         return self.title
 
 class Quiz(models.Model):
+    value = models.TextField() #ここに科目名を入力 Subjectのtitleと一致するかに使用
     question = models.TextField()
     answer = models.TextField()
+
+    def __str__(self):
+        return self.value
