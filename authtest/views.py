@@ -3,6 +3,7 @@ from authtest.models import Subject
 from django.http import Http404
 from authtest.models import Quiz
 from django.contrib.auth.models import User
+import random
 
 # Create your views here.
 
@@ -72,8 +73,18 @@ def start(request, subject_id):
         subject = Subject.objects.get(pk = subject_id)
     except Subject.DoesNotExist:
         raise Http404("Subject does not exist")
+    try:
+        quiz = Quiz.objects.all()
+    except Quiz.DoesNotExist:
+        raise Http404("Quiz does not exist")
+    lst = []
+    for q in quiz:
+        if (q.value == subject.title):
+            lst.append(q.id)
+    quiz = Quiz.objects.get(pk = random.choice(lst))
     context = {
-        'subject': subject
+        'subject': subject,
+        'quiz': quiz
     }
     return render(request, "authtest/start.html", context)
 
@@ -157,3 +168,11 @@ def ud(request, subject_id, quiz_id):
         "quiz": quiz
     }
     return render(request, 'authtest/ed.html', context)
+
+def ex(request, subject_id , quiz_id):
+    if request.method == 'POST':
+        quiz = Quiz.objects.get(pk = quiz_id)
+        if (quiz.answer == (request.POST['answer'])):
+            return render(request, 'authtest/correct.html')
+        else:
+            return render(request, 'authtest/wrong.html')

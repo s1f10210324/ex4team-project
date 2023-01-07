@@ -5,6 +5,14 @@
     <title></title>
   </head>
   <body>
-  <h1>スタート画面</h1>
+
+    <h3>問題</h3>
+    <h5>{{ quiz.question }}</h5>
+    <form action = "{% url 'ex' subject.id quiz.id%}" method = "post">
+      {% csrf_token %}
+      <label for = "titleInput">解答</label>
+      <input id = "answerInput" name = "answer" type = "text" placeholder = "解答を入力してください">
+      <button type = "submit">解答する</button>
+    </form>
   </body>
 </html>
