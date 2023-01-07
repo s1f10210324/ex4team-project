@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <h1>{{ subject.title }}</h1>
     <a href = "{% url 'start' subject.id %}">始める</a>
     <a href = "{% url 'make' subject.id %}">問題作成</a>
     <a href = "{% url 'home' %}">戻る</a>

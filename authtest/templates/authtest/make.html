@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-  <h1>問題作成画面</h1>
+  <h1>Create question</h1>
   <form action = "{% url 'make' subject.id%}" method = "post">
     {% csrf_token %}
 

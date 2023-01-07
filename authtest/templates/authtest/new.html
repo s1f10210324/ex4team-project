@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-  <h1>アカウント新規作成ページ</h1>
+  <h1>Create new account</h1>
   <form action = "{% url 'new' %}" method = "post">
     {% csrf_token %}
     <label for = "titleInput">ユーザ名</label>

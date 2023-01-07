@@ -6,8 +6,8 @@
   </head>
   <body>
 
-    <h3>問題</h3>
-    <h5>{{ quiz.question }}</h5>
+    <h1>問題</h1>
+    <h2>{{ quiz.question }}</h2>
     <form action = "{% url 'ex' subject.id quiz.id%}" method = "post">
       {% csrf_token %}
       <label for = "titleInput">解答</label>
