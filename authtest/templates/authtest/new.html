@@ -5,14 +5,19 @@
     <title></title>
   </head>
   <body>
-  <h1>アカウントを新規登録する(未完成ページ)</h1>
-  {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
-    <form method = "post"> <!--DBに新規登録するページを作成。登録(DBに保存)したら、ログインページにリダイレクトする-->
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type = "submit" value = "登録する" />
-    </form>
+  <h1>アカウント新規作成ページ</h1>
+  <form action = "{% url 'new' %}" method = "post">
+    {% csrf_token %}
+    <label for = "titleInput">ユーザ名</label>
+    <input id = "nameInput" name = "name" type = "text" placeholder = "名前を入力してください">
+
+    <label for = "titleInput">メールアドレス</label>
+    <input id = "addressInput" name = "address" type = "text" placeholder = "メールアドレスを入力してください">
+
+    <label for = "titleInput">パスワード</label>
+    <input id = "passwordInput" name = "password" type = "text" placeholder = "パスワードを入力してください">
+
+    <button type = "submit">作成する</button>
+  </form>
   </body>
 </html>

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from authtest.models import Subject
 from django.http import Http404
 from authtest.models import Quiz
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -16,6 +17,10 @@ def home(request):
     return render(request, "authtest/home.html", context)
 
 def new(request):
+    if request.method == 'POST':
+        act = User.objects.create_user(request.POST['name'], request.POST['address'], request.POST['password'])
+        act.save()
+        return redirect(home)
     return render(request, 'authtest/new.html')
 
 def detail(request, subject_id):
@@ -124,7 +129,7 @@ def dl(request, subject_id, quiz_id):
     except Subject.DoesNotExist:
         raise Http404("Subject does not exist")
     quiz.delete()
-    
+
     contents = Quiz.objects.all()
     context = {
         'subject': subject,
