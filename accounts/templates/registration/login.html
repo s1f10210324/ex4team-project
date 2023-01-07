@@ -4,13 +4,14 @@
   <head>
     <meta charset="utf-8">
     <title>ログインページ</title>
-    <link href="{% static 'accounts/css/login2.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login3.css' %}" rel="stylesheet">
   </head>
   <canvas id="canvas"></canvas>
   <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 <div class="content">
+  <div class="context">
   <body>
     <h1>Login</h1>
     {% if form.errors %}
@@ -27,5 +28,20 @@
 
     <a href = "{% url 'home' %}">ホームに戻る</a>
     </div>
+    </div>
+    <div class="area" >
+      <ul class="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+      </ul>
+</div >
   </body>
 </html>
