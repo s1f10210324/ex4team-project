@@ -66,8 +66,6 @@ def quiz(request, subject_id):
         'qz': contents
     }
     return render(request, "authtest/quiz.html", context)
-    #<<subject.title>>で教科名を取りだせるから、Quiz.valueと比較して
-    #一致したら表示(しなくてもクイズの時に表示出来たらok)
 
 def start(request, subject_id):
     try:

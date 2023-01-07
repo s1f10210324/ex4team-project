@@ -9,14 +9,13 @@
     <a href = "{% url 'make' subject.id %}">問題作成</a>
     <a href = "{% url 'home' %}">戻る</a>
 
-    {% if qz %} <!--クイズがある場合-->
     <p>以下は登録されている問題です</p>
     {% for q in qz %}
+    {% if q.value == subject.title %}
     <a href = "{% url 'dt' subject.id q.id %}">{{ q.question }}</a> <!--クイズ詳細設定、ページ遷移管理のために、subject.idとq.idを引数に渡す-->
+    {% else %}
+    {% endif %}
     {% endfor %}
-    {% else %} <!--クイズが一つもない場合-->
-    <p>1つも問題がありません</p>
-    {% endif %} <!--登録されてなかったら何か表示-->
     <br>
   </body>
 </html>
