@@ -4,9 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="{% static 'accounts/css/login2.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login5.css' %}" rel="stylesheet">
   </head>
   <body>
+    <div class="anim-box">
     {% if user.is_authenticated %} <!--ログインしている場合-->
     <h1>Subject list</h1>
     <form action = "{% url 'home' %}" method = "post">
@@ -29,7 +30,8 @@
 
     {% else %} <!--ログインしていない場合-->
     <h1>stuQ</h1>
-    <a href = "{% url 'login' %}">はじめる</a>
+    <a class="anime_test" href = "{% url 'login' %}">はじめる</a>
     {% endif %}
+    </div>
   </body>
 </html>

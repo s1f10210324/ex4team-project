@@ -4,44 +4,25 @@
   <head>
     <meta charset="utf-8">
     <title>ログインページ</title>
-    <link href="{% static 'accounts/css/login2.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login5.css' %}" rel="stylesheet">
   </head>
-  <canvas id="canvas"></canvas>
-  <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-<div class="content">
-  <div class="context">
+
   <body>
+  <div class="context">
     <h1>LoginPage</h1>
     {% if form.errors %}
     {% endif %}
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <input type = "submit" value = "Login" />
+      <input class="anime_test" type = "submit" value = "Login" />
     </form>
 
-    <a href = "{% url 'new' %}">アカウント新規作成</a>
+    <a class="anime_test" href = "{% url 'new' %}">アカウント新規作成</a>
 
     <br>
 
-    <a href = "{% url 'home' %}">ホームに戻る</a>
+    <a class="anime_test" href = "{% url 'home' %}">ホームに戻る</a>
     </div>
-    </div>
-    <div class="area" >
-      <ul class="circles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-      </ul>
-</div >
   </body>
 </html>
