@@ -4,17 +4,17 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="{% static 'accounts/css/login2.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login5.css' %}" rel="stylesheet">
   </head>
   <body>
   <h1>Create new account</h1>
   <form action = "{% url 'new' %}" method = "post">
     {% csrf_token %}
     <label for = "titleInput">ユーザ名</label>
-    <input id = "nameInput" name = "name" type = "text" placeholder = "名前を入力してください">
+    <input id = "nameInput" name = "name" type = "text" placeholder = "名前を入力してください"><br>
 
     <label for = "titleInput">メールアドレス</label>
-    <input id = "addressInput" name = "address" type = "text" placeholder = "メールアドレスを入力してください">
+    <input id = "addressInput" name = "address" type = "text" placeholder = "メールアドレスを入力してください"><br>
 
     <label for = "titleInput">パスワード</label>
     <input id = "passwordInput" name = "password" type = "text" placeholder = "パスワードを入力してください">
