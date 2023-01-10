@@ -11,7 +11,8 @@
     <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAs0jTExPClwilZiCdfzw7uXrX__INo21AqQ&usqp=CAU' alt="パワー!">
     <hr>
     <p>
-      <a href = "{% url 'home' %}">戻る</a>
+      <a href = "{% url 'quiz' subject.id %}">問題一覧に戻る</a>
+      <a href = "{% url 'home' %}">教科一覧に戻る</a>
     </p>
   </body>
 </html>

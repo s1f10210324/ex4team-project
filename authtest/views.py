@@ -173,6 +173,28 @@ def ex(request, subject_id , quiz_id):
     if request.method == 'POST':
         quiz = Quiz.objects.get(pk = quiz_id)
         if (quiz.answer == (request.POST['answer'])):
-            return render(request, 'authtest/correct.html')
+            return redirect(correct, subject_id)
+        #    return render(request, 'authtest/correct.html')
         else:
-            return render(request, 'authtest/wrong.html')
+            return redirect(wrong, subject_id)
+        #    return render(request, 'authtest/wrong.html')
+
+def correct(request, subject_id):
+    try:
+        subject = Subject.objects.get(pk = subject_id)
+    except Subject.DoesNotExist:
+        raise Http404("Subject does not exist")
+    context = {
+        'subject': subject,
+    }
+    return render(request, 'authtest/correct.html', context)
+
+def wrong(request, subject_id):
+    try:
+        subject = Subject.objects.get(pk = subject_id)
+    except Subject.DoesNotExist:
+        raise Http404("Subject does not exist")
+    context = {
+        'subject': subject,
+    }
+    return render(request, 'authtest/wrong.html', context)
