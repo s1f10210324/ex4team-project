@@ -38,7 +38,7 @@ a {
 
 
 body {
-    background: -moz-linear-gradient(45deg, #000000 0%, #000000 29%, #fffcff 66%, #91563f 100%);
+    background: -moz-linear-gradient(45deg, #66da92 0%, #3a59f4 29%, #fffcff 66%, #91563f 100%);
     background: -webkit-linear-gradient(45deg, #000000 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
     background: linear-gradient(45deg, #d7ff46 0%,#0acdfe 29%,#f86c6c 66%,#ff500a 100%);
     background-size: 400% 400%;
@@ -145,3 +145,7 @@ body::after {
 	.st13{opacity:0.2;}
 	.st14{clip-path:url(#SVGID_16_);}
 	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
+
+	h1 {
+		text-align:center ;
+	}
