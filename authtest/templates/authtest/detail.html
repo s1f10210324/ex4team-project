@@ -4,16 +4,16 @@
   <head>
     <meta charset="UTF-8">
     <title>教科詳細ページ</title>
-    <link href="{% static 'accounts/css/login5.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login1.css' %}" rel="stylesheet">
     <meta charset="UTF-8"></head>
   <body>
     <h2>{{ subject.title }}</h2>
     <hr>
     <p>
+      <a href = "{% url 'quiz' subject.id %}">作成/演習</a><br>
+      <a href = "{% url 'update' subject.id %}">変更</a><br>
+      <a href = "{% url 'delete' subject.id %}">削除</a><br>
       <a href = "{% url 'home' %}">戻る</a>
-      <a href = "{% url 'update' subject.id %}">変更</a>
-      <a href = "{% url 'delete' subject.id %}">削除</a>
-      <a href = "{% url 'quiz' subject.id %}">作成</a>
     </p>
   </body>
 </html>
