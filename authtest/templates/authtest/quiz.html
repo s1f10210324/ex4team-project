@@ -4,12 +4,12 @@
   <head>
     <meta charset="UTF-8">
     <title>問題一覧ページ</title>
-    <link href="{% static 'accounts/css/login5.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login1.css' %}" rel="stylesheet">
   </head>
   <body>
     <h1>{{ subject.title }}</h1>
-    <a href = "{% url 'start' subject.id %}">始める</a>
-    <a href = "{% url 'make' subject.id %}">問題作成</a>
+    <a href = "{% url 'start' subject.id %}">始める</a><br>
+    <a href = "{% url 'make' subject.id %}">問題作成</a><br>
     <a href = "{% url 'home' %}">戻る</a>
 
     <p>以下は登録されている問題一覧です。何も表示されていない場合、一つも問題が登録されていません。</p>
