@@ -15,7 +15,7 @@ a {
     );
     box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
     transition: background-position ease 0.4s;
-    text-align: center;
+    text-align: left;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -26,7 +26,6 @@ a {
     background-position: 0 0;
   }
   
-  /****** Base style. ******/
   body {
     display: flex;
     height: 100vh;
@@ -145,7 +144,3 @@ body::after {
 	.st13{opacity:0.2;}
 	.st14{clip-path:url(#SVGID_16_);}
 	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-
-	h1 {
-		text-align:center ;
-	}
