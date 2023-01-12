@@ -11,9 +11,6 @@
   <form action = "{% url 'make' subject.id%}" method = "post">
     {% csrf_token %}
 
-    <label for = "titleInput">教科名</label>
-    <input id = "valueInput" name = "value" type = "text" placeholder = "教科名を入力してください"><br>
-
     <label for = "titleInput">問題</label>
     <input id = "questionInput" name = "question" type = "text" placeholder = "問題を入力してください"><br>
 

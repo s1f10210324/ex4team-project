@@ -90,12 +90,12 @@ def start(request, subject_id):
 
 def make(request, subject_id):
     if request.method == 'POST': #作成ボタンが押された場合の挙動
-        qt = Quiz(value = request.POST['value'], question = request.POST['question'], answer = request.POST['answer'])
-        qt.save()
         try:
             subject = Subject.objects.get(pk = subject_id)
         except Subject.DoesNotExist:
             raise Http404("Subject does not exist")
+        qt = Quiz(value = subject.title, question = request.POST['question'], answer = request.POST['answer'])
+        qt.save()
         context = {
             'subject': subject
         }
