@@ -8,11 +8,11 @@
   </head>
   <body>
     <h1>{{ subject.title }}</h1>
-    <a href = "{% url 'start' subject.id %}">始める</a><br>
-    <a href = "{% url 'make' subject.id %}">問題作成</a><br>
-    <a href = "{% url 'home' %}">戻る</a>
+    <a href = "{% url 'start' subject.id %}">始める</a>
+    <a href = "{% url 'make' subject.id %}">問題作成</a>
+    <a href = "{% url 'home' %}">戻る</a><br>
 
-    <p>以下は登録されている問題一覧です。何も表示されていない場合、一つも問題が登録されていません。</p>
+    <h3>以下は登録されている問題一覧です。何も表示されていない場合、一つも問題が登録されていません。</h3>
     {% for q in qz %}
     {% if q.value == subject.title %}
     <a href = "{% url 'dt' subject.id q.id %}">{{ q.question }}</a> <!--クイズ詳細設定、ページ遷移管理のために、subject.idとq.idを引数に渡す-->

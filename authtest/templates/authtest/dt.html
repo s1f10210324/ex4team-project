@@ -7,9 +7,9 @@
     <link href="{% static 'accounts/css/login1.css' %}" rel="stylesheet">
     <meta charset="UTF-8"></head>
   <body>
-    <p>教科名: {{ quiz.value }}</p><br>
-    <p>問題: {{ quiz.question }}</p><br>
-    <p>答え: {{ quiz.answer }}</p>
+    <h3>教科名: {{ quiz.value }}</h3>
+    <h3>問題: {{ quiz.question }}</h3>
+    <h3>答え: {{ quiz.answer }}</h3>
     <hr>
     <p>
       <a href = "{% url 'quiz' subject.id %}">戻る</a>

@@ -7,16 +7,16 @@
     <link href="{% static 'accounts/css/login1.css' %}" rel="stylesheet">
   </head>
   <body>
-  <h1>Create new account</h1>
+  <h1>Create a new account</h1>
   <form action = "{% url 'new' %}" method = "post">
     {% csrf_token %}
-    <label for = "titleInput">ユーザ名</label>
-    <input id = "nameInput" name = "name" type = "text" placeholder = "名前を入力してください"><br>
+    <label for = "titleInput">ユーザ名:</label>
+    <input id = "nameInput" name = "name" type = "text" placeholder = "ユーザ名を入力してください"><br>
 
-    <label for = "titleInput">メールアドレス</label>
+    <label for = "titleInput">メールアドレス:</label>
     <input id = "addressInput" name = "address" type = "text" placeholder = "メールアドレスを入力してください"><br>
 
-    <label for = "titleInput">パスワード</label>
+    <label for = "titleInput">パスワード:</label>
     <input id = "passwordInput" name = "password" type = "text" placeholder = "パスワードを入力してください">
 
     <button type = "submit">作成する</button>
