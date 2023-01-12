@@ -7,7 +7,7 @@
     <link href="{% static 'accounts/css/login1.css' %}" rel="stylesheet">
   </head>
   <body>
-  <h1>Create question</h1>
+  <h1>Create a question</h1>
   <form action = "{% url 'make' subject.id%}" method = "post">
     {% csrf_token %}
 

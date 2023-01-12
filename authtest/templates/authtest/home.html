@@ -12,7 +12,7 @@
     <h1>Subject list</h1>
     <form action = "{% url 'home' %}" method = "post">
       {% csrf_token %}
-      <label for = "titleInput">新しく作成する</label>
+      <label for = "titleInput">新しく作成する:</label>
       <input id = "titleInput" name = "title" type = "text" placeholder = "教科名を入力してください">
       <button type = "submit">作成する</button>
     </form>
@@ -29,7 +29,7 @@
 
 
     {% else %} <!--ログインしていない場合-->
-    <h1>STAQ</h1>
+    <h1>StuQ</h1>
     <a class="anime_test" href = "{% url 'login' %}">はじめる</a>
     {% endif %}
     </div>

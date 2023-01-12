@@ -12,7 +12,7 @@
     <h2>{{ quiz.question }}</h2>
     <form action = "{% url 'ex' subject.id quiz.id%}" method = "post">
       {% csrf_token %}
-      <label for = "titleInput">解答</label>
+      <label for = "titleInput">解答:</label>
       <input id = "answerInput" name = "answer" type = "text" placeholder = "解答を入力してください">
       <button type = "submit">解答する</button>
     </form>
